@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NORDIC & PAWS 沐光木質餐廳 ｜ 台北大安區寵物友善餐廳</title>
+    <style>
+        :root {
+            --bg-main: #FDFBF7;
+            --bg-soft: #F7F2EB;
+            --bg-card: #FFFFFF;
+            --wood-light: #EADBC8;
+            --wood-mid: #D9C5B2;
+            --wood-dark: #3E3228;
+            --wood-hover: #5A493B;
+            --text-muted: #6E5D4F;
+            --sage: #8A9A86;
+            --sage-hover: #788874;
+            --sage-soft: #F0F4EF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--wood-dark);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", sans-serif;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* 1. 導覽列 */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(234, 219, 200, 0.7);
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo-group {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background-color: var(--wood-mid);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        .logo-title {
+            font-size: 1.2rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            display: block;
+        }
+
+        .logo-sub {
+            font-size: 0.75rem;
+            color: var(--sage);
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--sage);
+        }
+
+        .btn-sage {
+            background-color: var(--sage);
+            color: #fff !important;
+            padding: 0.6rem 1.3rem;
+            border-radius: 999px;
+            transition: all 0.2s;
+            box-shadow: 0 2px 6px rgba(138, 154, 134, 0.25);
+        }
+
+        .btn-sage:hover {
+            background-color: var(--sage-hover);
+        }
+
+        /* 2. 主視覺 Hero */
+        .hero {
+            padding: 4.5rem 0 5.5rem;
+            background: linear-gradient(180deg, #FDFBF7 0%, #F7F2EB 50%, #FDFBF7 100%);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 3.5rem;
+            align-items: center;
+        }
+
+        .pill-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(234, 219, 200, 0.65);
+            padding: 0.45rem 1rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.25;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 span {
+            color: var(--sage);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            max-width: 560px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+
+        .btn-dark {
+            background: var(--wood-dark);
+            color: #fff;
+            padding: 0.9rem 2rem;
+            border-radius: 999px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: 0.2s;
+            display: inline-block;
+        }
+
+        .btn-dark:hover {
+            background: var(--wood-hover);
+        }
+
+        .btn-outline {
+            border: 1.5px solid var(--wood-dark);
+            color: var(--wood-dark);
+            padding: 0.9rem 2rem;
+            border-radius: 999px;
+            font-weight: 600;
+            transition: 0.2s;
+            display: inline-block;
+        }
+
+        .btn-outline:hover {
+            background: rgba(234, 219, 200, 0.35);
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(234, 219, 200, 0.8);
+            max-width: 480px;
+        }
+
+        .stat-num {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--sage);
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .hero-image-wrap {
+            position: relative;
+        }
+
+        .hero-img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 2rem;
+            border: 5px solid #fff;
+            box-shadow: 0 20px 40px rgba(62, 50, 40, 0.12);
+        }
+
+        .float-card {
+            position: absolute;
+            bottom: -20px;
+            left: -24px;
+            background: #fff;
+            padding: 1rem 1.25rem;
+            border-radius: 1.25rem;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(234, 219, 200, 0.5);
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+        }
+
+        .float-icon {
+            background: var(--bg-soft);
+            padding: 0.6rem;
+            border-radius: 0.85rem;
+            font-size: 1.3rem;
+        }
+
+        /* 通用區塊標題 */
+        section {
+            padding: 5.5rem 0;
+        }
+
+        .section-head {
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto 3.5rem;
+        }
+
+        .section-tag {
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.15em;
+            color: var(--sage);
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-head h2 {
+            font-size: 2.1rem;
+            font-weight: 800;
+            margin-bottom: 0.85rem;
+        }
+
+        .section-head p {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+        }
+
+        /* 3. 品牌體驗 */
+        .bg-white { background-color: #fff; }
+        .bg-soft { background-color: var(--bg-soft); }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--bg-main);
+            padding: 2.25rem;
+            border-radius: 1.75rem;
+            border: 1px solid rgba(234, 219, 200, 0.6);
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(62, 50, 40, 0.06);
+        }
+
+        .feature-icon {
+            width: 52px;
+            height: 52px;
+            background: rgba(217, 197, 178, 0.35);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-card p {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+        }
+
+        /* 4. 用餐情境 */
+        .space-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3.5rem;
+            align-items: center;
+        }
+
+        .check-list {
+            list-style: none;
+            margin-top: 1.5rem;
+            space-y: 0.8rem;
+        }
+
+        .check-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+            margin-bottom: 0.85rem;
+            font-weight: 500;
+        }
+
+        .photo-mosaic {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .photo-mosaic img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            border-radius: 1.25rem;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.07);
+        }
+
+        .photo-mosaic img:nth-child(even) {
+            margin-top: 1.5rem;
+        }
+
+        /* 5. 互動菜單 */
+        .menu-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.25rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .tab-btn {
+            padding: 0.65rem 1.35rem;
+            border-radius: 999px;
+            border: none;
+            background: var(--bg-soft);
+            color: var(--wood-dark);
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tab-btn:hover {
+            background: rgba(234, 219, 200, 0.75);
+        }
+
+        .tab-btn.active {
+            background: var(--wood-dark);
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(62, 50, 40, 0.2);
+        }
+
+        .search-box {
+            position: relative;
+            width: 280px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.65rem 1.2rem;
+            border-radius: 999px;
+            border: 1px solid var(--wood-light);
+            background: var(--bg-main);
+            font-size: 0.9rem;
+            outline: none;
+        }
+
+        .search-box input:focus {
+            border-color: var(--sage);
+        }
+
+        .menu-card {
+            background: var(--bg-main);
+            border-radius: 1.75rem;
+            overflow: hidden;
+            border: 1px solid rgba(234, 219, 200, 0.75);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(62, 50, 40, 0.08);
+        }
+
+        .menu-img-wrap {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .menu-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .menu-card:hover .menu-img-wrap img {
+            transform: scale(1.05);
+        }
+
+        .badge-popular {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--sage);
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+        }
+
+        .badge-price {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            background: rgba(30, 24, 20, 0.78);
+            backdrop-filter: blur(4px);
+            color: #fff;
+            font-size: 0.9rem;
+            font-weight: 700;
+            padding: 0.3rem 0.85rem;
+            border-radius: 999px;
+        }
+
+        .menu-body {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .menu-body h4 {
+            font-size: 1.12rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-body p {
+            font-size: 0.86rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .menu-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid rgba(234, 219, 200, 0.5);
+        }
+
+        .tag-item {
+            font-size: 0.74rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 0.45rem;
+            background: rgba(234, 219, 200, 0.45);
+            font-weight: 600;
+        }
+
+        .tag-spicy {
+            background: #FEE2E2;
+            color: #DC2626;
+        }
+
+        /* 6. 線上訂位表單 */
+        .booking-card {
+            max-width: 820px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 3rem;
+            border-radius: 2rem;
+            border: 1px solid var(--wood-light);
+            box-shadow: 0 18px 40px rgba(62, 50, 40, 0.06);
+        }
+
+        .form-grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .form-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 0.45rem;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border-radius: 0.85rem;
+            border: 1px solid var(--wood-light);
+            background: var(--bg-main);
+            font-size: 0.92rem;
+            font-family: inherit;
+            outline: none;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--sage);
+        }
+
+        .booking-success {
+            display: none;
+            text-align: center;
+            padding: 2.5rem 1rem;
+        }
+
+        .booking-success .check-circle {
+            width: 64px;
+            height: 64px;
+            background: #DCFCE7;
+            color: #16A34A;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 1rem;
+        }
+
+        /* 7. 營業資訊與地圖 */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 5fr 7fr;
+            gap: 3rem;
+        }
+
+        .hours-box {
+            background: var(--bg-main);
+            padding: 1.5rem;
+            border-radius: 1.25rem;
+            border: 1px solid rgba(234, 219, 200, 0.8);
+            margin: 1.5rem 0;
+        }
+
+        .hours-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f0ebe3;
+        }
+
+        .hours-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-list p {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
+
+        .transport-box {
+            margin-top: 1.5rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--wood-light);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .transport-box p {
+            margin-bottom: 0.5rem;
+        }
+
+        .map-frame {
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+            border-radius: 1.75rem;
+            overflow: hidden;
+            border: 1px solid var(--wood-light);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+        }
+
+        /* 8. 頁尾 */
+        footer {
+            background: var(--wood-dark);
+            color: var(--wood-light);
+            padding: 3.5rem 0 2.5rem;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--wood-hover);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--sage);
+            margin-top: 1.5rem;
+        }
+
+        @media (max-width: 900px) {
+            .hero-grid, .space-grid, .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 { font-size: 2.25rem; }
+            .nav-links { display: none; }
+            .float-card { display: none; }
+            .form-grid-2, .form-grid-3 { grid-template-columns: 1fr; }
+            .booking-card { padding: 1.75rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. 導覽列 -->
+    <nav>
+        <div class="container nav-inner">
+            <div class="logo-group">
+                <div class="logo-icon">☀️</div>
+                <div>
+                    <span class="logo-title">NORDIC & PAWS</span>
+                    <span class="logo-sub">沐光木質餐廳 · 寵物友善</span>
+                </div>
+            </div>
+            <div class="nav-links">
+                <a href="#about">品牌體驗</a>
+                <a href="#menu">美味菜單</a>
+                <a href="#space">用餐情境</a>
+                <a href="#reservation">線上訂位</a>
+                <a href="#contact">營業與交通</a>
+                <a href="#reservation" class="btn-sage">立即訂位</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. 主視覺 -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div>
+                <div class="pill-badge">🐶 台北大安區 · 寵物友善全日光玻璃屋</div>
+                <h1>陽光、木香，<br>與你和毛孩的<span>美味幸福時光</span>。</h1>
+                <p>專為學生、小資族與溫馨家庭打造的高 CP 值北歐風西式餐館。嚴選天然食材、全天候自然採光，還有寵物專屬無鹽健康餐點！</p>
+                <div class="hero-btns">
+                    <a href="#reservation" class="btn-dark">預約極簡採光席</a>
+                    <a href="#menu" class="btn-outline">探索平價菜單</a>
+                </div>
+                <div class="hero-stats">
+                    <div>
+                        <div class="stat-num">100%</div>
+                        <div class="stat-label">自然採光空間</div>
+                    </div>
+                    <div>
+                        <div class="stat-num">NT$280↑</div>
+                        <div class="stat-label">親民價格義大利麵</div>
+                    </div>
+                    <div>
+                        <div class="stat-num">Pet-Friendly</div>
+                        <div class="stat-label">毛孩自由同行</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image-wrap">
+                <img class="hero-img" src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80" alt="北歐木質採光餐廳空間">
+                <div class="float-card">
+                    <div class="float-icon">✨</div>
+                    <div>
+                        <div style="font-size:0.85rem;font-weight:700;">學生與家庭小聚首選</div>
+                        <div style="font-size:0.75rem;color:#6E5D4F;">免負擔高昂費用，享受高質感饗宴</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. 品牌體驗與食材特色 -->
+    <section id="about" class="bg-white">
+        <div class="container">
+            <div class="section-head">
+                <span class="section-tag">BRAND EXPERIENCE</span>
+                <h2>料理風格與純粹食材特色</h2>
+                <p>我們相信好的餐飲經驗不該昂貴且繁複。在 NORDIC & PAWS，我們將北歐簡潔生活哲學融入每一道西式料理中，講究食材的原汁原味與溫馨感受。</p>
+            </div>
+            <div class="grid-3">
+                <div class="feature-card">
+                    <div class="feature-icon">🍽️</div>
+                    <h3>極簡西式經典料理</h3>
+                    <p>主打兼具健康與美味的經典義大利麵與舒肥排餐。沒有過多人工添加物，僅用橄欖油、海鹽與天然香草提味，讓學生與小家庭安心享受美味。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌿</div>
+                    <h3>在地嚴選與履歷食材</h3>
+                    <p>每日由產地直送大安區的有機小農蔬菜、生鮮蛤蜊與嚴選澳洲熟成牛排。即便是平價價位，也堅持絕不對品質妥協。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🐾</div>
+                    <h3>真誠毛孩友善空間</h3>
+                    <p>歡迎帶貓狗同行！店內備有專屬寵物水碗與寵物防滑地墊，並由專業寵物營養師研發專屬鮮食小蛋糕，讓毛孩子也能共享歡樂餐桌。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. 用餐情境呈現 -->
+    <section id="space" class="bg-soft">
+        <div class="container space-grid">
+            <div>
+                <span class="section-tag">SPACE & AMBIANCE</span>
+                <h2 style="font-size:2.1rem;font-weight:800;margin-bottom:1rem;line-height:1.3;">大面玻璃天窗採光<br>溫暖原木質感的無壓空間</h2>
+                <p style="color:var(--text-muted);">位於靜謐巷弄角落，全店採用溫潤的大麥木與白橡木傢俱，搭配 360 度大光量玻璃窗設計。清晨至午後，自然日光撒落在餐桌上，創造最適合讀書、讀書會、家庭聚餐與毛孩寫真的愜意氛圍。</p>
+                <ul class="check-list">
+                    <li>✅ 桌距寬敞，狗狗貓咪伸展不受限</li>
+                    <li>✅ 設有插座與免費 High-speed Wi-Fi（適合學生讀書）</li>
+                    <li>✅ 兒童高腳椅與幼兒友善餐具完整齊備</li>
+                    <li>✅ 空氣淨化器與寵物除臭全天候運作</li>
+                </ul>
+            </div>
+            <div class="photo-mosaic">
+                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=500&q=80" alt="採光空間">
+                <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=500&q=80" alt="木質座位區">
+                <img src="https://images.unsplash.com/photo-1537047902294-62a40c20a6ae?auto=format&fit=crop&w=500&q=80" alt="精緻西餐">
+                <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=500&q=80" alt="寵物友善">
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. 模組化菜單設計 -->
+    <section id="menu" class="bg-white">
+        <div class="container">
+            <div class="section-head">
+                <span class="section-tag">OUR MENU</span>
+                <h2>美味菜單列表</h2>
+                <p>價格透明、品質嚴選。點擊上方分類按鈕或輸入關鍵字搜尋您想吃的菜色！</p>
+            </div>
+
+            <div class="menu-controls">
+                <div class="tabs" id="categoryTabs">
+                    <button class="tab-btn active" data-cat="all">全部菜單</button>
+                    <button class="tab-btn" data-cat="pasta">義大利麵</button>
+                    <button class="tab-btn" data-cat="mains">精選排餐</button>
+                    <button class="tab-btn" data-cat="dessert">手作甜點</button>
+                    <button class="tab-btn" data-cat="beverage">精品飲品</button>
+                </div>
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="搜尋餐點（如：松露、牛排）...">
+                </div>
+            </div>
+
+            <div class="grid-3" id="menuContainer"></div>
+        </div>
+    </section>
+
+    <!-- 6. 線上訂位表單 -->
+    <section id="reservation" class="bg-soft">
+        <div class="container">
+            <div class="booking-card">
+                <div class="section-head" style="margin-bottom:2rem;">
+                    <span class="section-tag">RESERVATION</span>
+                    <h2>線上預約座位</h2>
+                    <p>歡迎預約！若需帶毛孩同行，請於備註告知毛孩品種與體型，我們將為您安排最適座位。</p>
+                </div>
+
+                <div class="booking-success" id="bookingSuccess">
+                    <div class="check-circle">✓</div>
+                    <h3 style="font-size:1.5rem;margin-bottom:0.5rem;">訂位成功！</h3>
+                    <p id="bookingSummaryText" style="color:var(--text-muted);font-size:0.95rem;margin-bottom:1.5rem;"></p>
+                    <button type="button" class="btn-dark" id="resetBookingBtn">再次預約 / 重新填寫</button>
+                </div>
+
+                <form id="bookingForm">
+                    <div class="form-grid-2">
+                        <div>
+                            <label>訂位人姓名 *</label>
+                            <input type="text" id="bName" required placeholder="例：陳大明">
+                        </div>
+                        <div>
+                            <label>聯絡電話 *</label>
+                            <input type="tel" id="bPhone" required placeholder="0912-345-678">
+                        </div>
+                    </div>
+                    <div class="form-grid-2">
+                        <div>
+                            <label>用餐日期 *</label>
+                            <input type="date" id="bDate" required>
+                        </div>
+                        <div>
+                            <label>用餐時段 *</label>
+                            <select id="bTime">
+                                <option value="11:30">11:30 (早午餐)</option>
+                                <option value="12:30">12:30 (午餐)</option>
+                                <option value="14:00">14:00 (下午茶)</option>
+                                <option value="17:30">17:30 (晚餐)</option>
+                                <option value="18:30" selected>18:30 (晚餐)</option>
+                                <option value="19:30">19:30 (晚晚餐)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-grid-3">
+                        <div>
+                            <label>大人人數</label>
+                            <select id="bAdults">
+                                <option value="1">1 位</option>
+                                <option value="2" selected>2 位</option>
+                                <option value="3">3 位</option>
+                                <option value="4">4 位</option>
+                                <option value="5">5 位</option>
+                                <option value="6">6 位以上</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>孩童人數</label>
+                            <select id="bChildren">
+                                <option value="0" selected>0 位</option>
+                                <option value="1">1 位</option>
+                                <option value="2">2 位</option>
+                                <option value="3">3 位</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>同行毛孩</label>
+                            <select id="bPets">
+                                <option value="0" selected>0 隻</option>
+                                <option value="1">1 隻</option>
+                                <option value="2">2 隻</option>
+                                <option value="3">3 隻</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div style="margin-bottom:1.5rem;">
+                        <label>特殊需求與毛孩備註</label>
+                        <textarea id="bNotes" rows="3" placeholder="例：需準備兒童座椅 / 攜帶一隻中型柴犬，需要靠邊寬敞座位..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-dark" style="width:100%;padding:1rem;font-size:1rem;">確認送出線上預約</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. 營業資訊與交通聯絡（含 Google Map） -->
+    <section id="contact" class="bg-white" style="border-top:1px solid rgba(234,219,200,0.6);">
+        <div class="container contact-grid">
+            <div>
+                <span class="section-tag">LOCATION & HOURS</span>
+                <h2 style="font-size:2rem;font-weight:800;">營業資訊與交通導引</h2>
+
+                <div class="hours-box">
+                    <div style="font-weight:700;color:var(--sage);margin-bottom:0.5rem;">🕒 營業時間</div>
+                    <div class="hours-row">
+                        <strong>週一至週五</strong>
+                        <span>11:30 - 21:00（供餐至 20:00）</span>
+                    </div>
+                    <div class="hours-row">
+                        <strong>週六至週日</strong>
+                        <span>10:30 - 21:30（供餐至 20:30）</span>
+                    </div>
+                </div>
+
+                <div class="info-list">
+                    <p>📍 臺北市大安區溫州街 86 號 1 樓（台大商圈 / 捷運公館站 3 號出口步行 5 分鐘）</p>
+                    <p>📞 訂位專線：(02) 2368-9888</p>
+                    <p>✉️ 聯絡信箱：hello@nordicpaws.tw</p>
+                </div>
+
+                <div class="transport-box">
+                    <h4 style="color:var(--wood-dark);margin-bottom:0.5rem;">交通方式指引：</h4>
+                    <p><strong>【捷運】</strong> 捷運公館站 3 號出口，沿新生南路步行約 5 分鐘轉溫州街即可到達。</p>
+                    <p><strong>【公車】</strong> 搭乘公車至「台大站」或「溫州街口站」，步行約 2 分鐘。</p>
+                    <p><strong>【停車資訊】</strong> 鄰近「台大公館停車場」或「新生南路地下停車場」，步行約 3-5 分鐘。</p>
+                </div>
+            </div>
+
+            <div class="map-frame">
+                <iframe 
+                    title="Google Map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.427357482352!2d121.5312!3d25.0175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a989d9e68377%3A0x6b4453b3dfa32df4!2sNational%20Taiwan%20University!5e0!3m2!1szh-TW!2stw!4v1710000000000!5m2!1szh-TW!2stw" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. 頁尾 -->
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div>
+                    <h3 style="color:#fff;font-size:1.25rem;letter-spacing:0.05em;">NORDIC & PAWS 沐光木質餐廳</h3>
+                    <p style="font-size:0.8rem;color:var(--wood-mid);margin-top:0.25rem;">© 2026 NORDIC & PAWS Taiwan. All rights reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#about">品牌體驗</a>
+                    <a href="#menu">美味菜單</a>
+                    <a href="#reservation">線上訂位</a>
+                </div>
+            </div>
+            <p class="footer-note">友善提醒：攜帶毛孩請維持牽繩或使用寵物籃，共同維護舒適的日光用餐體驗。</p>
+        </div>
+    </footer>
+
+    <script>
+        const MENU_ITEMS = [
+            {
+                id: 'p1', categoryId: 'pasta', name: '奶油粉紅醬松露野菇義大利麵', price: 280,
+                description: '使用義大利進口黑松露醬，搭配現炒綜合野菇與濃郁滑順粉紅醬，學生與家庭最愛的經典口味。',
+                tags: ['HOT 人氣首選', '奶素可'], spicyLevel: 0, isPopular: true,
+                image: 'https://images.unsplash.com/photo-1621996346565-e3d5d6281273?auto=format&fit=crop&w=600&q=80'
+            },
+            {
+                id: 'p2', categoryId: 'pasta', name: '蒜香辣味白酒蛤蜊扁麵', price: 290,
+                description: '產地直送新鮮大蛤蜊，以冷壓初榨橄欖油、蒜片與嚴選白酒大火爆炒，香氣四溢、鮮味十足。',
+                tags: ['主廚推薦'], spicyLevel: 1, isPopular: true,
+                image: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=600&q=80'
+            },
+            {
+                id: 'p3', categoryId: 'pasta', name: '慢燉波隆那經典嫩牛肉醬麵', price: 310,
+                description: '主廚特製紅酒搭配澳洲手切牛肉慢火燉煮 6 小時，蔬菜濃縮甘甜，每一口都是道地北義風味。',
+                tags: ['經典手作'], spicyLevel: 0, isPopular: false,
+                image: 'https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=600&q=80'
+            },
+            {
+                id: 'm1', categoryId: 'mains', name: '北歐迷迭香香草舒肥雞腿排', price: 360,
+                description: '採用低溫舒肥技術鎖住肉汁，外皮煎至金黃酥脆，搭配烤季節時蔬與特製檸檬優格醬。',
+                tags: ['超高CP值', '寵物友善水煮肉可選'], spicyLevel: 0, isPopular: true,
+                image: 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=600&q=80'
+            },
+            {
+                id: 'm2', categoryId: 'mains', name: '炙烤頂級安格斯肋眼牛排 (8oz)', price: 580,
+                description: '濕式熟成安格斯牛排，高溫鎖住肉汁，佐海鹽、烤蒜球與手作紅酒濃縮醬汁，極致滿足感。',
+                tags: ['店長大推'], spicyLevel: 0, isPopular: true,
+                image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80'
+            },
+            {
+                id: 'm3', categoryId: 'mains', name: '挪威香煎鮭魚菲力佐蒔蘿白醬', price: 420,
+                description: '空運挪威鮭魚，油脂豐富肉質細緻，搭配清香蒔蘿醬與香草馬鈴薯泥，清新無負擔。',
+                tags: ['嚴選海鮮'], spicyLevel: 0, isPopular: false,
+                image: 'https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=600&q=80'
+            },
+            {
+                id: 'd1', categoryId: 'dessert', name: '瑞典手作肉桂捲佐焦糖淋醬', price: 130,
+                description: '每日現烤，選用錫蘭肉桂粉與天然發酵奶油，口感層次豐富，香氣濃郁不甜膩。',
+                tags: ['每日限量'], spicyLevel: 0, isPopular: true,
+                image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80'
+            },
+            {
+                id: 'd2', categoryId: 'dessert', name: '法式濃郁焦糖烤布蕾', price: 110,
+                description: '嚴選馬達加斯加香草籽與優質鮮奶，表面以有機砂糖炙烤出金黃脆焦糖，滑順細緻。',
+                tags: ['蛋奶素'], spicyLevel: 0, isPopular: false,
+                image: 'https://images.unsplash.com/photo-1470124182917-cc6e71b22ecc?auto=format&fit=crop&w=600&q=80'
+            },
+            {
+                id: 'd3', categoryId: 'dessert', name: '燕麥無糖寵物專屬紫薯小蛋糕', price: 90,
+                description: '專為毛孩研發！全蒸熟紫薯搭配無糖有機燕麥與雞胸肉餡，無任何添加劑，健康美味。',
+                tags: ['毛孩專屬美食'], spicyLevel: 0, isPopular: true,
+                image: 'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=600&q=80'
+            },
+            {
+                id: 'b1', categoryId: 'beverage', name: '沐光陽光手沖精品咖啡 (燕麥奶可加價)', price: 140,
+                description: '淺中烘焙中南美洲莊園豆，帶有柑橘香氣與堅果尾韻，口感清爽順口。',
+                tags: ['招牌飲品'], spicyLevel: 0, isPopular: true,
+                image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80'
+            },
+            {
+                id: 'b2', categoryId: 'beverage', name: '接骨木莓果清新氣泡飲', price: 130,
+                description: '手工熬煮綜合莓果醬搭配有機接骨木花糖漿，沁涼氣泡口感，拍照網美必點。',
+                tags: ['無咖啡因'], spicyLevel: 0, isPopular: false,
+                image: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=600&q=80'
+            }
+        ];
+
+        let currentCat = 'all';
+        let searchText = '';
+
+        const menuContainer = document.getElementById('menuContainer');
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const searchInput = document.getElementById('searchInput');
+
+        function renderMenu() {
+            const list = MENU_ITEMS.filter(item => {
+                const matchCat = currentCat === 'all' || item.categoryId === currentCat;
+                const matchQuery = item.name.toLowerCase().includes(searchText) || item.description.toLowerCase().includes(searchText);
+                return matchCat && matchQuery;
+            });
+
+            if (list.length === 0) {
+                menuContainer.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:3rem;color:#6E5D4F;">找不到符合「${searchText}」的餐點，試試其他關鍵字吧！</div>`;
+                return;
+            }
+
+            menuContainer.innerHTML = list.map(item => `
+                <div class="menu-card">
+                    <div class="menu-img-wrap">
+                        <img src="${item.image}" alt="${item.name}">
+                        ${item.isPopular ? '<span class="badge-popular">人氣 NO.1</span>' : ''}
+                        <span class="badge-price">NT$ ${item.price}</span>
+                    </div>
+                    <div class="menu-body">
+                        <div>
+                            <h4>${item.name}</h4>
+                            <p>${item.description}</p>
+                        </div>
+                        <div class="menu-tags">
+                            ${item.spicyLevel > 0 ? `<span class="tag-item tag-spicy">🔥 辣度 x${item.spicyLevel}</span>` : ''}
+                            ${item.tags.map(t => `<span class="tag-item">${t}</span>`).join('')}
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                tabBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentCat = btn.getAttribute('data-cat');
+                renderMenu();
+            });
+        });
+
+        searchInput.addEventListener('input', e => {
+            searchText = e.target.value.trim().toLowerCase();
+            renderMenu();
+        });
+
+        const bookingForm = document.getElementById('bookingForm');
+        const bookingSuccess = document.getElementById('bookingSuccess');
+        const bookingSummaryText = document.getElementById('bookingSummaryText');
+        const resetBookingBtn = document.getElementById('resetBookingBtn');
+
+        bookingForm.addEventListener('submit', e => {
+            e.preventDefault();
+            const name = document.getElementById('bName').value;
+            const phone = document.getElementById('bPhone').value;
+            const date = document.getElementById('bDate').value;
+            const time = document.getElementById('bTime').value;
+            const adults = document.getElementById('bAdults').value;
+            const pets = document.getElementById('bPets').value;
+
+            bookingSummaryText.textContent = `感謝您的預約，【${name}】先生/小姐！我們已收到您的訂位資訊（${date} ${time}，${adults} 位大人、${pets} 隻毛孩）。簡訊確認信已發送至 ${phone}。`;
+            bookingForm.style.display = 'none';
+            bookingSuccess.style.display = 'block';
+        });
+
+        resetBookingBtn.addEventListener('click', () => {
+            bookingForm.reset();
+            bookingSuccess.style.display = 'none';
+            bookingForm.style.display = 'block';
+        });
+
+        renderMenu();
+    </script>
+</body>
+</html>
